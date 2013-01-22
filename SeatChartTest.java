@@ -3,8 +3,25 @@ public class SeatChartTest
 {
 	public static void main(String [] args)
 	{
-		SeatChart seatChart = new SeatChart();
 		Scanner scan = new Scanner(System.in);
+		/*
+		String insufficiency; 
+		int allocateSeat;
+		 
+		System.out.println("Are 10 seats enough for your seat-chart? Y or N");
+		insufficiency = scan.nextLine();
+		if(insufficiency.equalsIgnoreCase("N"))
+		{
+			System.out.println("How many seat do you need??");
+			allocateSeat = scan.nextInt();
+			SeatChart seatChart = new SeatChart(allocateSeat);
+			
+			
+		}		
+		*/
+			SeatChart seatChart = new SeatChart();
+		
+		
 		int action;
 		do
 		{
@@ -36,21 +53,25 @@ public class SeatChartTest
 				case 4: 
 					System.out.println("Clear All Current Reservation");
 					SeatChart.clearAll(seatChart);
+					System.out.println("All seats are currently available");
 					break;
 				case 5:
 					System.out.println("Compare two seatChart");
 					SeatChart seatChart2 = new SeatChart();
 					if(seatChart.equals(seatChart2))
+					{
 						System.out.println("True");
-					else 
+					}
+					else
+					{ 
 						System.out.println("false");
-					
+					}
 					break;
 				case 6:
 					System.out.println(seatChart.toString());	
 					break;
 				case 7:
-					System.out.println("Thanks for using it");
+					System.out.println("Thanks for using it. See you again!");
 					
 					break;
 			}
