@@ -140,13 +140,13 @@ public class SeatChart
 	}
 	
 	@Override 
-	public boolean equals(Object obj)
+	public boolean equals(Object obj)//test each conditions work well
 	{
 		//boolean equals = false; 
 		if(this.getClass()==obj.getClass())//determine whether the type is same or not.
 		{
-			if(this.seat.length ==((SeatChart)obj).seat.length )
-			{
+			if(this.seat.length ==((SeatChart)obj).seat.length )  
+			{// because after determining, we can use cast here(we know it is similer data type)
 				for(int index =0; index < seat.length; index++)
 				{
 					if(seat[index] != ((SeatChart)obj).seat[index])
