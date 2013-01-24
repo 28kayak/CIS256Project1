@@ -33,7 +33,7 @@ public class SeatChart
 		if(num >= 0 && num < seat.length && !seat[num])
 		{
 			seat[num] = true;
-			System.out.println("valid seat number.");
+			System.out.println("the seat is reserved for you");
 		}
 		else
 		{
@@ -45,7 +45,7 @@ public class SeatChart
 		if(num >= 0 && num < seat.length)
 		{
 			seat[num] = false;
-			System.out.println("valid seat number.");
+			System.out.printf("%d seat is now available.",num);
 		}	
 		else
 		{
@@ -89,16 +89,6 @@ public class SeatChart
 	}
 	public int getMax()
 	{
-		/*int availableSeat = 0;
-		for(int index = 0; index < seat.length ; index++)
-		{
-			if(!seat[index])
-			{
-				//if seat has false then condition will be true;
-				availableSeat += 1;
-			}
-		}
-		*/
 		return seat.length;
 		
 	}
@@ -152,7 +142,7 @@ public class SeatChart
 				{
 					if(seat[index] != ((SeatChart)obj).seat[index])
 					{
-						System.out.printf("num %d seat does not much.", index);
+						System.out.printf("No. %d seat does not much.", index);
 						return false;
 					}
 				}
@@ -169,7 +159,7 @@ public class SeatChart
 	public String toString()
 	{
 		String message;
-		 message = this.numTaken() + "seats are already reserved";
+		 message = this.numTaken() + " seats are already reserved";
 		 return message; 
 	}
 	public SeatChart clone()
