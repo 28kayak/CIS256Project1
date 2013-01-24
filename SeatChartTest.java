@@ -4,35 +4,30 @@ public class SeatChartTest
 	public static void main(String [] args)
 	{
 		Scanner scan = new Scanner(System.in);
-		/*
-		String insufficiency; 
-		int allocateSeat;
+		
 		 
-		System.out.println("Are 10 seats enough for your seat-chart? Y or N");
-		insufficiency = scan.nextLine();
-		if(insufficiency.equalsIgnoreCase("N"))
-		{
-			System.out.println("How many seat do you need??");
-			allocateSeat = scan.nextInt();
-			SeatChart seatChart = new SeatChart(allocateSeat);
-			
-			
-		}		
-		*/
-			SeatChart seatChart = new SeatChart();
-		
-		
+		int allocateSeat;
+		boolean fullness;
+		int end = -1;
 		int action;
+		int seatNum = 0;
+		System.out.println("How many seat do you need??");
+		allocateSeat = scan.nextInt();
+		SeatChart seatChart = new SeatChart(allocateSeat);
+		
+		
+		
 		do
 		{
 			System.out.println("\nwhat action do you want to take?");
 			System.out.println("1:Reserve a seat \n2:Release a reserved seat");
 			System.out.println("3:Get current numbers of available seat \n4:Clear all current reservation");
-			System.out.println("5: Compare two SeatChart \n6:Output all current reservation");
-			System.out.println("7: Exit this program");
+			System.out.println("5:Compare two SeatChart \n6:Output all current reservation");
+			System.out.println("7:Check if there is available seats\n" +
+					"Type -1 to Exit this program");
 		
 			action = scan.nextInt();
-			int seatNum = 0;
+			
 			switch(action)
 			{
 				case 1:
@@ -70,12 +65,24 @@ public class SeatChartTest
 				case 6:
 					System.out.println(seatChart.toString());	
 					break;
-				case 7:
-					System.out.println("Thanks for using it. See you again!");
+				case 7: 
 					
+					fullness = seatChart.isFull();
+					if(fullness == true)
+					{
+						System.out.println("Sorry, No seat available");
+					}
+					else
+					{
+						System.out.println("We still have available seats!");
+					}
+					System.out.println("");
 					break;
+				
+					
+				
 			}
-		}while (action != 7 );
-		
+		}while (action != end);
+		System.out.println("Thanks for using it. See you again!");
 	}//main
 }//class
