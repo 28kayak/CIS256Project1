@@ -14,6 +14,7 @@ public class SeatChartTest
 		System.out.println("How many seat do you need??");
 		allocateSeat = scan.nextInt();
 		SeatChart seatChart = new SeatChart(allocateSeat);
+		System.out.printf("%d seats are allocated",seatChart.getMax());
 		
 		
 		
@@ -55,11 +56,11 @@ public class SeatChartTest
 					SeatChart seatChart2 = new SeatChart();
 					if(seatChart.equals(seatChart2))
 					{
-						System.out.println("True");
+						System.out.println("the same chart");
 					}
 					else
 					{ 
-						System.out.println("false");
+						System.out.println("they are different");
 					}
 					break;
 				case 6:
