@@ -34,7 +34,7 @@ public class SeatChart
 		if(num >= 0 && num < seat.length && !seat[num])
 		{
 			seat[num] = true;
-			System.out.println("valid seat number.");
+			System.out.printf("\nNo.%d is reserved.", num);
 		}
 		else
 		{
@@ -46,7 +46,7 @@ public class SeatChart
 		if(num >= 0 && num < seat.length)
 		{
 			seat[num] = false;
-			System.out.println("valid seat number.");
+			System.out.printf("\ncanseled No.%d seat");
 		}	
 		else
 		{
@@ -90,10 +90,12 @@ public class SeatChart
 	}
 	public int getMax()
 	{
-		return seat.length;
+		return this.seat.length;
 	}
 	public int numTaken()
-	{
+	{   
+		int maxSeat = getMax();
+		//int availablity =0;
 		int unavailableSeat = 0;
 		for(int index = 0; index < seat.length ; index++)
 		{
@@ -104,6 +106,7 @@ public class SeatChart
 			
 		}
 		
+		//availablity = maxSeat - unavailableSeat;
 		return unavailableSeat;
 		
 		
