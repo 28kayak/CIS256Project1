@@ -16,7 +16,7 @@ public class SeatChartTest
 		allocateSeat = scan.nextInt();
 		SeatChart seatChart = new SeatChart(allocateSeat);
 		
-		
+		System.out.printf("%d seats on this seat chart",  seatChart.getMax());
 		
 		do
 		{
@@ -43,7 +43,7 @@ public class SeatChartTest
 					seatChart.release(seatNum);
 					break;
 				case 3:
-					seatNum =  seatChart.getMax();
+					seatNum =  seatChart.getMax() - seatChart.numTaken();
 					System.out.printf("currently, %d seats are available", seatNum);
 					break;
 				case 4: 
@@ -79,10 +79,9 @@ public class SeatChartTest
 					}
 					System.out.println("");
 					break;
-				
-					
-				
-			}
+			}//switch 
+			
+			
 		}while (action != end);
 		System.out.println("Thanks for using it. See you again!");
 	}//main
