@@ -42,7 +42,7 @@ public class SeatChartTest
 					seatChart.release(seatNum);
 					break;
 				case 3:
-					seatNum =  seatChart.getMax();
+					seatNum =  seatChart.getMax()-seatChart.numTaken();
 					System.out.printf("currently, %d seats are available", seatNum);
 					break;
 				case 4: 
