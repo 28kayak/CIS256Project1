@@ -1,7 +1,7 @@
 
 public class SeatChart 
 {
-	boolean seat[];
+	private boolean seat[];
 	public SeatChart()
 	{
 		seat = new boolean [10];
@@ -30,7 +30,7 @@ public class SeatChart
 	}
 	public void reserve(int num)
 	{
-		if(num >= 1 && num < seat.length && !seat[num])
+		if(num >= 0 && num < seat.length && !seat[num])
 		{
 			seat[num] = true;
 			System.out.println("valid seat number.");
@@ -42,7 +42,7 @@ public class SeatChart
 	}
 	public void release(int num)
 	{
-		if(num >= 1 && num < seat.length)
+		if(num >= 0 && num < seat.length)
 		{
 			seat[num] = false;
 			System.out.println("valid seat number.");
@@ -61,9 +61,9 @@ public class SeatChart
 			if(!seat[num])//= if seat is false, then condition will be true
 				availablity = true;
 		}
-		catch(ArrayIndexOutOfBoundsException e)
+		catch(ArrayIndexOutOfBoundsException ex)
 		{
-			System.out.println("Error:" + e);
+			System.out.println("Error:" + ex);
 			availablity = false;
 		}
 		return availablity;
@@ -80,6 +80,7 @@ public class SeatChart
 			else
 			{
 				full = false;
+				return full;
 			}
 			
 		}
@@ -88,7 +89,7 @@ public class SeatChart
 	}
 	public int getMax()
 	{
-		int availableSeat = 0;
+		/*int availableSeat = 0;
 		for(int index = 0; index < seat.length ; index++)
 		{
 			if(!seat[index])
@@ -97,8 +98,8 @@ public class SeatChart
 				availableSeat += 1;
 			}
 		}
-		
-		return availableSeat;
+		*/
+		return seat.length;
 		
 	}
 	public int numTaken()
@@ -127,7 +128,7 @@ public class SeatChart
 	public boolean validSeat(int num)
 	{
 		boolean validity = false;
-		if(num >= 1 && num < seat.length)
+		if(num >= 0 && num < seat.length)
 		{
 			validity = true;
 		}
@@ -151,9 +152,11 @@ public class SeatChart
 				{
 					if(seat[index] != ((SeatChart)obj).seat[index])
 					{
+						System.out.printf("num %d seat does not much.", index);
 						return false;
 					}
 				}
+				System.out.println("both are same seat chart");
 				return true;
 			}
 		}
