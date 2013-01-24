@@ -2,6 +2,7 @@
 public class SeatChart 
 {
 	private boolean seat[];
+	
 	public SeatChart()
 	{
 		seat = new boolean [10];
@@ -89,18 +90,7 @@ public class SeatChart
 	}
 	public int getMax()
 	{
-		/*int availableSeat = 0;
-		for(int index = 0; index < seat.length ; index++)
-		{
-			if(!seat[index])
-			{
-				//if seat has false then condition will be true;
-				availableSeat += 1;
-			}
-		}
-		*/
 		return seat.length;
-		
 	}
 	public int numTaken()
 	{
@@ -169,7 +159,7 @@ public class SeatChart
 	public String toString()
 	{
 		String message;
-		 message = this.numTaken() + "seats are already reserved";
+		 message = this.numTaken() + " seats are already reserved";
 		 return message; 
 	}
 	public SeatChart clone()

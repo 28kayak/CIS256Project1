@@ -11,6 +11,7 @@ public class SeatChartTest
 		int end = -1;
 		int action;
 		int seatNum = 0;
+		
 		System.out.println("How many seat do you need??");
 		allocateSeat = scan.nextInt();
 		SeatChart seatChart = new SeatChart(allocateSeat);
