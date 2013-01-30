@@ -47,6 +47,7 @@ public class Wlist
 	 {
 		 return MAXSIZE;
 	 }
+	 
 
 }//class
 
